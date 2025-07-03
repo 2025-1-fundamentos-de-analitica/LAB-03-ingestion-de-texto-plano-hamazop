@@ -117,4 +117,4 @@ def pregunta_01():
     nueva_fila = pandas.DataFrame([[cluster, cantidad, porcentaje, palabra]], columns = cabecera)
     data_frame = pandas.concat([data_frame, nueva_fila])
 
-    return data_frame.head()
+    return data_frame
