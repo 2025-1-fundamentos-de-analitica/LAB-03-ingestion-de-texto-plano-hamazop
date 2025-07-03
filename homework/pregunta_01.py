@@ -101,20 +101,20 @@ def pregunta_01():
         # Build the new line
         cluster = int(sub_string[0])
         cantidad = int(sub_string[1])
-        porcentaje = float(sub_string[2].replace(',', '.'))
+        porcentaje = float(sub_string[2].replace(",", "."))
         palabra = ""
         for i in range( 4, len(sub_string) ):
-          palabra = palabra + sub_string[i] + " "
+          palabra = palabra + sub_string[i].replace(".", "") + " "
       
       # If it doesn't it is the same line
       else:
 
         # Keep building the words
         for i in range( len(sub_string) ):
-          palabra = palabra + sub_string[i] + " "
+          palabra = palabra + sub_string[i].replace(".", "") + " "
 
     # Finally, save the last line
-    nueva_fila = pandas.DataFrame([[cluster, cantidad, porcentaje, palabra.strip()]], columns = cabecera)
+    nueva_fila = pandas.DataFrame([[cluster, cantidad, porcentaje, palabra]], columns = cabecera)
     data_frame = pandas.concat([data_frame, nueva_fila])
 
     return data_frame
