@@ -95,7 +95,7 @@ def pregunta_01():
         
         # Save the old line
         if palabra != "":
-          nueva_fila = pandas.DataFrame([[cluster, cantidad, porcentaje, palabra]], columns = cabecera)
+          nueva_fila = pandas.DataFrame([[cluster, cantidad, porcentaje, palabra.strip()]], columns = cabecera)
           data_frame = pandas.concat([data_frame, nueva_fila])
 
         # Build the new line
@@ -114,7 +114,7 @@ def pregunta_01():
           palabra = palabra + sub_string[i] + " "
 
     # Finally, save the last line
-    nueva_fila = pandas.DataFrame([[cluster, cantidad, porcentaje, palabra]], columns = cabecera)
+    nueva_fila = pandas.DataFrame([[cluster, cantidad, porcentaje, palabra.strip()]], columns = cabecera)
     data_frame = pandas.concat([data_frame, nueva_fila])
 
     return data_frame
